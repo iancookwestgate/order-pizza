@@ -11,8 +11,23 @@
     <title>Pizza Company</title>
   </head>
   <body>
-    <h1>Let's-a-go Get Some Pizza!</h1>
-    <h2>Order Yer Za!</h2>
-    
+    <div class="container">
+      <h1>Let's-a-go Get Some Pizza!</h1>
+      <h2>Order yer Za of Choice Below!</h2>
+      <hr>
+      <form id="new-pizza">
+        <p>Toppings</p>
+        <input type="checkbox" name="toppings1" value="Cheese"> Cheese <br>
+        <input type="checkbox" name="toppings2" value="Pepperoni"> Pepperoni <br>
+        <input type="checkbox" name="toppings3" value="Mushroom"> Mushroom <br>
+        <p>Sizes</p>
+        <input type="radio" name="size1" value="Personal"> Personal <br>
+        <input type="radio" name="size2" value="Medium"> Medium <br>
+        <input type="radio" name="size3" value="Large"> Large <br>
+        <button type="submit" class="btn-danger btn-lg"> Price Out Yer Pizza</button>
+      </form>
+      <hr>
+      <h4>Your pizza will cost: <span id="pizzaResults"></span>. We hope you enjoy it!</h4>
+    </div>
   </body>
 </html>
