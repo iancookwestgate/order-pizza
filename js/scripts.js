@@ -38,29 +38,22 @@ $(document).ready(function() {
 
   $("#totalingButton").click(function(event) {
     $("#displayTotal").show();
-    var demToppings = 0;
+    var demToppings = [];
     $("input:checkbox[name=toppings]:checked").each(function() {
-      demToppings += parseInt($(this).val());
+      demToppings += ($(this).val());
     });
-    var datSize = parseInt($("#addSize").val());
+    var datSize = ($("input[name='size']:checked").val());
 
+
+
+    console.log(datSize);
+    console.log(demToppings);
     var newPizza = new Pizza();
-
+    topIt = demToppings;
+    sizeIt = datSize;
     totalIt = (datSize + demToppings);
-    $("#pizzaResults").text(totalIt)''
-    // var demToppings = Pizza.topIt(topping);
-    // var datSize = Pizza.sizeIt(size);
-    // var finalTotal = function(sum) {
-    //   sum = demToppings + datSize;
-    //   return(sum.totalIt);
-    // }
+    $("#pizzaResults").text(totalIt);
 
-    // $("input#addToppings").topIt();
-    // $("input#addSize").sizeIt();
-
-
-
-    // $("#pizzaResults").append(total);
     event.preventDefault();
 
 
