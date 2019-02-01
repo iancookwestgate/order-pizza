@@ -40,13 +40,21 @@ $(document).ready(function() {
 
   $("#totalingButton").click(function(event) {
     $("#displayTotal").show();
-    $("input#addToppings").topIt();
-    $("input#addSize").sizeIt();
-    console.log(Pizza.totalIt);
+      var demToppings = Pizza.topIt(topping);
+      var datSize = Pizza.sizeIt(size);
+      var finalTotal = function(sum) {
+        sum = demToppings + datSize;
+        return(sum.totalIt);
+      }
+
+      // $("input#addToppings").topIt();
+      // $("input#addSize").sizeIt();
+
+      console.log(Pizza.totalIt);
 
 
-    // $("#pizzaResults").append(total);
-    event.preventDefault();
+      // $("#pizzaResults").append(total);
+      event.preventDefault();
 
 
 
