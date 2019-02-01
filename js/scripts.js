@@ -1,7 +1,6 @@
 function Pizza() {
-  this.toppings = [];
-  this.size = [];
-  this.price = 0;
+  this.toppings = 0;
+  this.size = 0;
 }
 
 Pizza.prototype.topIt = function(topping) {
@@ -29,8 +28,6 @@ Pizza.prototype.sizeIt = function(size) {
 }
 
 Pizza.prototype.totalIt = function(total) {
-  Pizza.topIt();
-  Pizza.sizeIt();
   total = Pizza.toppings + Pizza.size;
   return total;
 }
@@ -38,12 +35,15 @@ Pizza.prototype.totalIt = function(total) {
 
 $(document).ready(function() {
   var newPizza = new Pizza();
-  var total = 0;
 
   $("#totalingButton").click(function(event) {
-    total = Pizza.totalIt;
     $("#displayTotal").show();
-    $("#pizzaResults").append(total);
+    $("input#addToppings").Pizza.topIt();
+    $("input#addSize").Pizza.sizeIt();
+    console.log(Pizza.totalIt);
+
+
+    // $("#pizzaResults").append(total);
     event.preventDefault();
 
 
