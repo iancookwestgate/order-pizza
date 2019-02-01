@@ -44,13 +44,20 @@ $(document).ready(function() {
     });
     var datSize = ($("input[name='size']:checked").val());
 
+    // $(demToppings).topIt(function() {
+    //   return parseInt($(this).val());
+    // })
 
+    demToppings.topIt();
+    datSize.sizeIt();
 
     console.log(datSize);
     console.log(demToppings);
     var newPizza = new Pizza();
+
     topIt = demToppings;
     sizeIt = datSize;
+
     totalIt = (datSize + demToppings);
     $("#pizzaResults").text(totalIt);
 
