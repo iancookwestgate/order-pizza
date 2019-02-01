@@ -6,11 +6,11 @@ function Pizza() {
 
 Pizza.prototype.topIt = function(topping) {
   if (topping === "Cheese") {
-    this.toppings = 1;
+    this.toppings += 1;
   } else if (topping === "Pepperoni") {
-    this.toppings = 2;
+    this.toppings += 2;
   } else if (topping === "Mushroom") {
-    this.toppings = 3;
+    this.toppings += 3;
   } else {
     alert("Don't order a naked pizza!");
   }
@@ -28,7 +28,12 @@ Pizza.prototype.sizeIt = function(size) {
   }
 }
 
-
+Pizza.prototype.totalIt = function(total) {
+  Pizza.topIt();
+  Pizza.sizeIt();
+  total = Pizza.toppings + Pizza.size;
+  return total;
+}
 
 
 // function User(monies) {
@@ -52,7 +57,9 @@ $(document).ready(function() {
 
 
   $("#totalingButton").click(function(event) {
+    var superTotal = Pizza.totalIt;
     $("#displayTotal").show();
+    $("#pizzaResults").append(superTotal);
     event.preventDefault();
 
 
