@@ -38,25 +38,21 @@ $(document).ready(function() {
 
   $("#totalingButton").click(function(event) {
     $("#displayTotal").show();
+    var newPizza = new Pizza();
     var demToppings = [];
     $("input:checkbox[name=toppings]:checked").each(function() {
       demToppings += ($(this).val());
     });
     var datSize = ($("input[name='size']:checked").val());
 
+    newPizza.topIt(demToppings);
+    newPizza.sizeIt(datSize);
     // $(demToppings).topIt(function() {
     //   return parseInt($(this).val());
     // })
 
-    demToppings.topIt();
-    datSize.sizeIt();
-
     console.log(datSize);
     console.log(demToppings);
-    var newPizza = new Pizza();
-
-    topIt = demToppings;
-    sizeIt = datSize;
 
     totalIt = (datSize + demToppings);
     $("#pizzaResults").text(totalIt);
