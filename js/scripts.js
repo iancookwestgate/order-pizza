@@ -3,29 +3,29 @@ function Pizza() {
   this.size = [];
 }
 
-Pizza.prototype.topIt = function() {
-  var chosenTopping = this.toppings;
-  var topTotal = 0;
-  if (chosenTopping === "Cheese") {
+Pizza.prototype.topIt = function(this.toppings) {
+  debugger;
+  var topTotal = [];
+  if (this.toppings === "Cheese") {
     topTotal += 1;
-  } else if (chosenTopping === "Pepperoni") {
+  } else if (this.toppings === "Pepperoni") {
     topTotal += 2;
-  } else if (chosenTopping === "Mushroom") {
+  } else if (this.toppings === "Mushroom") {
     topTotal += 3;
   } else {
     alert("Don't order a naked pizza!");
   }
   return topTotal;
+  console.log(topTotal);
 }
 
 Pizza.prototype.sizeIt = function() {
-  var chosenSize = this.size;
-  var sizeTotal = 0;
-  if (chosenSize === "Personal") {
+  var sizeTotal = [];
+  if (this.size === "Personal") {
     sizeTotal = 8;
-  } else if (chosenSize === "Medium") {
+  } else if (this.size === "Medium") {
     sizeTotal = 12;
-  } else if (chosenSize === "Large") {
+  } else if (this.size === "Large") {
     sizeTotal = 16;
   } else {
     alert("Please choose a size!")
@@ -48,15 +48,18 @@ $(document).ready(function() {
       demToppings += ($(this).val());
     });
     var datSize = ($("input[name='size']:checked").val());
+    newPizza.toppings.push(demToppings);
+    newPizza.size.push(datSize);
 
-    newPizza.topIt(demToppings);
-    newPizza.sizeIt(datSize);
+    newPizza.topIt();
+    newPizza.sizeIt();
+
+
     // $(demToppings).topIt(function() {
     //   return parseInt($(this).val());
     // })
 
-    console.log(datSize);
-    console.log(demToppings);
+    console.log(newPizza);
 
     totalIt = (datSize + demToppings);
     $("#pizzaResults").text(totalIt);
