@@ -1,10 +1,24 @@
+body {
+  background-color: #f4d34e;
+}
+
 button {
+  margin: 0 auto;
+  display: block;
+}
+
+img {
   margin: 0 auto;
   display: block;
 }
 
 .center {
   text-align: center;
+}
+
+.jumbotron {
+  background-color: #0b143a;
+  color: white;
 }
 
 #displayTotal {

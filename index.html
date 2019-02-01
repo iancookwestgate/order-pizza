@@ -13,7 +13,7 @@
   <body>
     <div class="container">
       <div class="center">
-        <h1>Let's-a-go Get Some Pizza!</h1>
+        <h1>Let's-a-go Eat Some Pizza!</h1>
         <h2>Order yer Za of Choice Below!</h2>
       </div>
       <hr>
@@ -24,16 +24,20 @@
           <input type="checkbox" name="toppings" value="Pepperoni"> $2 - Pepperoni <br>
           <input type="checkbox" name="toppings" value="Mushroom"> $3 - Mushroom<br>
         </form>
+        <br>
         <form id="addSize">
           <p><strong><em>Sizes</em></strong></p>
           <input type="radio" name="size" value="Personal"> $8 - Personal<br>
           <input type="radio" name="size" value="Medium"> $10 - Medium<br>
           <input type="radio" name="size" value="Large"> $12 - Large<br>
         </form>
-        <button id="totalingButton" class="btn-danger btn-lg"> Price Out Yer Pizza</button>
+        <button id="totalingButton" class="btn-danger btn-lg"> Price Out Yer Za</button>
       </div>
       <hr>
-      <h4 class="center" id="displayTotal">Your pizza will cost: $<span id="pizzaResults"></span>. We hope you enjoy it!</h4>
+      <div id="displayTotal">
+        <h4 class="center">Your pizza will cost: <strong>$<span id="pizzaResults"></span></strong>. We hope you enjoy it!</h4>
+        <img src="img/mario-pizza.jpg" width="400" height="500" alt="A picture of Super Mario and his za.">
+      </div>
     </div>
   </body>
 </html>
