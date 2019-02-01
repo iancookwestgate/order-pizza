@@ -3,30 +3,30 @@ function Pizza() {
   this.size = 0;
 }
 
-Pizza.prototype.topIt = function(topping) {
-  if (topping === "Cheese") {
+Pizza.prototype.topIt = function(chosenTopping) {
+  if (chosenTopping === "Cheese") {
     this.toppings += 1;
-  } else if (topping === "Pepperoni") {
+  } else if (chosenTopping === "Pepperoni") {
     this.toppings += 2;
-  } else if (topping === "Mushroom") {
+  } else if (chosenTopping === "Mushroom") {
     this.toppings += 3;
   } else {
     alert("Don't order a naked pizza!");
   }
-  return(topping.toppings);
+  return(chosenTopping.toppings);
 }
 
-Pizza.prototype.sizeIt = function(size) {
-  if (size === "Personal") {
+Pizza.prototype.sizeIt = function(chosenSize) {
+  if (chosenSize === "Personal") {
     this.size = 8;
-  } else if (size === "Medium") {
+  } else if (chosenSize === "Medium") {
     this.size = 12;
-  } else if (size === "Large") {
+  } else if (chosenSize === "Large") {
     this.size = 16;
   } else {
     alert("Please choose a size!")
   }
-  return(size.size);
+  return(chosenSize.size);
 }
 
 Pizza.prototype.totalIt = function() {
