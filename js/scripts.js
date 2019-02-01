@@ -1,36 +1,30 @@
 function Pizza() {
-  this.toppings = [];
-  this.size = [];
+  this.toppings = 0;
+  this.size = 0;
 }
 
-Pizza.prototype.topIt = function(this.toppings) {
-  debugger;
-  var topTotal = [];
-  if (this.toppings === "Cheese") {
-    topTotal += 1;
-  } else if (this.toppings === "Pepperoni") {
-    topTotal += 2;
-  } else if (this.toppings === "Mushroom") {
-    topTotal += 3;
+Pizza.prototype.topIt = function(demToppings) {
+  if (demToppings === "Cheese") {
+    this.toppings += 1;
+  } else if (demToppings === "Pepperoni") {
+    this.toppings += 2;
+  } else if (demToppings === "Mushroom") {
+    this.toppings += 3;
   } else {
     alert("Don't order a naked pizza!");
   }
-  return topTotal;
-  console.log(topTotal);
 }
 
-Pizza.prototype.sizeIt = function() {
-  var sizeTotal = [];
-  if (this.size === "Personal") {
-    sizeTotal = 8;
-  } else if (this.size === "Medium") {
-    sizeTotal = 12;
-  } else if (this.size === "Large") {
-    sizeTotal = 16;
+Pizza.prototype.sizeIt = function(datSize) {
+  if (datSize === "Personal") {
+    this.size = 8;
+  } else if (datSize === "Medium") {
+    this.size = 12;
+  } else if (datSize === "Large") {
+    this.size = 16;
   } else {
     alert("Please choose a size!")
   }
-  return sizeTotal;
 }
 
 Pizza.prototype.totalIt = function() {
@@ -48,11 +42,11 @@ $(document).ready(function() {
       demToppings += ($(this).val());
     });
     var datSize = ($("input[name='size']:checked").val());
-    newPizza.toppings.push(demToppings);
-    newPizza.size.push(datSize);
+    // newPizza.toppings.push(demToppings);
+    // newPizza.size.push(datSize);
 
-    newPizza.topIt();
-    newPizza.sizeIt();
+    newPizza.topIt(demToppings);
+    newPizza.sizeIt(datSize);
 
 
     // $(demToppings).topIt(function() {
