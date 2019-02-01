@@ -29,32 +29,39 @@ Pizza.prototype.sizeIt = function(size) {
   return(size.size);
 }
 
-Pizza.prototype.totalIt = function(total) {
-  total = Pizza.toppings + Pizza.size;
-  return total;
+Pizza.prototype.totalIt = function() {
+  return this.toppings + this.size;
 }
 
 
 $(document).ready(function() {
-  var newPizza = new Pizza();
 
   $("#totalingButton").click(function(event) {
     $("#displayTotal").show();
-      var demToppings = Pizza.topIt(topping);
-      var datSize = Pizza.sizeIt(size);
-      var finalTotal = function(sum) {
-        sum = demToppings + datSize;
-        return(sum.totalIt);
-      }
+    var demToppings = 0;
+    $("input:checkbox[name=toppings]:checked").each(function() {
+      demToppings += parseInt($(this).val());
+    });
+    var datSize = parseInt($("#addSize").val());
 
-      // $("input#addToppings").topIt();
-      // $("input#addSize").sizeIt();
+    var newPizza = new Pizza();
 
-      console.log(Pizza.totalIt);
+    totalIt = (datSize + demToppings);
+    $("#pizzaResults").text(totalIt)''
+    // var demToppings = Pizza.topIt(topping);
+    // var datSize = Pizza.sizeIt(size);
+    // var finalTotal = function(sum) {
+    //   sum = demToppings + datSize;
+    //   return(sum.totalIt);
+    // }
+
+    // $("input#addToppings").topIt();
+    // $("input#addSize").sizeIt();
 
 
-      // $("#pizzaResults").append(total);
-      event.preventDefault();
+
+    // $("#pizzaResults").append(total);
+    event.preventDefault();
 
 
 
