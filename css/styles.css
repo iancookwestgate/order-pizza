@@ -1,13 +1,8 @@
 body {
-  background-color: #f4d34e;
+  background-image: url("../img/mario-wallpaper.png");
 }
 
 button {
-  margin: 0 auto;
-  display: block;
-}
-
-img {
   margin: 0 auto;
   display: block;
 }
@@ -18,7 +13,7 @@ img {
 
 .jumbotron {
   background-color: #0b143a;
-  color: white;
+  color: gold;
 }
 
 #displayTotal {

@@ -32,7 +32,6 @@ Pizza.prototype.totalIt = function() {
   return this.toppings + this.size;
 }
 
-
 $(document).ready(function() {
   var newPizza = new Pizza();
   var demToppings = [];
