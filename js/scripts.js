@@ -39,12 +39,11 @@ $(document).ready(function() {
     var newPizza = new Pizza();
     var demToppings = [];
     $("input:checkbox[name=toppings]:checked").each(function() {
-      demToppings += ($(this).val());
+      demToppings += ($(this).val()) + ", ";
     });
     var datSize = ($("input[name='size']:checked").val());
-    // newPizza.toppings.push(demToppings);
-    // newPizza.size.push(datSize);
-
+    demToppings.split(",");
+    console.log(demToppings);
     newPizza.topIt(demToppings);
     newPizza.sizeIt(datSize);
 
@@ -55,7 +54,7 @@ $(document).ready(function() {
 
     console.log(newPizza);
 
-    totalIt = (datSize + demToppings);
+    totalIt = newPizza.toppings + newPizza.size;
     $("#pizzaResults").text(totalIt);
 
     event.preventDefault();
