@@ -12,24 +12,28 @@
   </head>
   <body>
     <div class="container">
-      <h1>Let's-a-go Get Some Pizza!</h1>
-      <h2>Order yer Za of Choice Below!</h2>
+      <div class="center">
+        <h1>Let's-a-go Get Some Pizza!</h1>
+        <h2>Order yer Za of Choice Below!</h2>
+      </div>
       <hr>
-      <form id="addToppings">
-        <p>Toppings</p>
-        <input type="checkbox" name="toppings" value="Cheese"> Cheese --- $1 <br>
-        <input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni --- $2 <br>
-        <input type="checkbox" name="toppings" value="Mushroom"> Mushroom --- $3<br>
-      </form>
-      <form id="addSize">
-        <p>Sizes</p>
-        <input type="radio" name="size" value="Personal"> Personal --- $8<br>
-        <input type="radio" name="size" value="Medium"> Medium --- $10<br>
-        <input type="radio" name="size" value="Large"> Large --- $12<br>
-      </form>
+      <div class="jumbotron">
+        <form id="addToppings">
+          <p><strong><em>Toppings</em></strong></p>
+          <input type="checkbox" name="toppings" value="Cheese"> $1 - Cheese <br>
+          <input type="checkbox" name="toppings" value="Pepperoni"> $2 - Pepperoni <br>
+          <input type="checkbox" name="toppings" value="Mushroom"> $3 - Mushroom<br>
+        </form>
+        <form id="addSize">
+          <p><strong><em>Sizes</em></strong></p>
+          <input type="radio" name="size" value="Personal"> $8 - Personal<br>
+          <input type="radio" name="size" value="Medium"> $10 - Medium<br>
+          <input type="radio" name="size" value="Large"> $12 - Large<br>
+        </form>
         <button id="totalingButton" class="btn-danger btn-lg"> Price Out Yer Pizza</button>
+      </div>
       <hr>
-      <h4 id="displayTotal">Your pizza will cost: $<span id="pizzaResults"></span>. We hope you enjoy it!</h4>
+      <h4 class="center" id="displayTotal">Your pizza will cost: $<span id="pizzaResults"></span>. We hope you enjoy it!</h4>
     </div>
   </body>
 </html>

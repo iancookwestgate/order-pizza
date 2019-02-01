@@ -37,6 +37,7 @@ $(document).ready(function() {
   var newPizza = new Pizza();
   var demToppings = [];
   $("#totalingButton").click(function(event) {
+    $(".jumbotron").slideUp(1000);
     $("#displayTotal").show();
     var datSize = ($("input[name='size']:checked").val());
     $("input:checkbox[name=toppings]:checked").each(function() {
