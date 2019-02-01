@@ -13,6 +13,7 @@ Pizza.prototype.topIt = function(topping) {
   } else {
     alert("Don't order a naked pizza!");
   }
+  return(topping.toppings);
 }
 
 Pizza.prototype.sizeIt = function(size) {
@@ -25,6 +26,7 @@ Pizza.prototype.sizeIt = function(size) {
   } else {
     alert("Please choose a size!")
   }
+  return(size.size);
 }
 
 Pizza.prototype.totalIt = function(total) {
@@ -38,8 +40,8 @@ $(document).ready(function() {
 
   $("#totalingButton").click(function(event) {
     $("#displayTotal").show();
-    $("input#addToppings").Pizza.topIt();
-    $("input#addSize").Pizza.sizeIt();
+    $("input#addToppings").topIt();
+    $("input#addSize").sizeIt();
     console.log(Pizza.totalIt);
 
 
