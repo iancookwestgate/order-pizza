@@ -3,7 +3,8 @@ function Pizza() {
   this.size = 0;
 }
 
-Pizza.prototype.topIt = function(splitToppings) {
+Pizza.prototype.topIt = function(demToppings) {
+    var splitToppings = demToppings.split(",");
     if (splitToppings.includes("Cheese")) {
       this.toppings += 1;
     }
@@ -33,32 +34,17 @@ Pizza.prototype.totalIt = function() {
 
 
 $(document).ready(function() {
-
+  var newPizza = new Pizza();
+  var demToppings = [];
   $("#totalingButton").click(function(event) {
     $("#displayTotal").show();
-    var newPizza = new Pizza();
-    var demToppings = [];
+    var datSize = ($("input[name='size']:checked").val());
     $("input:checkbox[name=toppings]:checked").each(function() {
       demToppings += ($(this).val()) + ",";
     });
-    var datSize = ($("input[name='size']:checked").val());
-    var splitToppings = demToppings.split(",");
-    newPizza.topIt(splitToppings);
+    newPizza.topIt(demToppings);
     newPizza.sizeIt(datSize);
-
-
-    // $(demToppings).topIt(function() {
-    //   return parseInt($(this).val());
-    // })
-
-    console.log(newPizza);
-
-    totalIt = newPizza.toppings + newPizza.size;
-    $("#pizzaResults").text(totalIt);
-
+    $("#pizzaResults").text(newPizza.toppings + newPizza.size);
     event.preventDefault();
-
-
-
-  })
+  });
 })
