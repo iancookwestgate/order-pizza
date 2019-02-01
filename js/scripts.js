@@ -36,30 +36,14 @@ Pizza.prototype.totalIt = function(total) {
 }
 
 
-// function User(monies) {
-//   this.monies = monies
-// }
-//
-// function PizzaOrder(toppings, size) {
-//   this.toppings = toppings;
-//   this.size = size;
-// }
-//
-// PizzaOrder.prototype.calculate = function(moneyArr) {
-//   function getTotal(total, num) {
-//     return total + num;
-//   }
-//   var total = moneyArr.reduce(getTotal);
-//   this.monies = total + this.monies;
-// }
-
 $(document).ready(function() {
-
+  var newPizza = new Pizza();
+  var total = 0;
 
   $("#totalingButton").click(function(event) {
-    var superTotal = Pizza.totalIt;
+    total = Pizza.totalIt;
     $("#displayTotal").show();
-    $("#pizzaResults").append(superTotal);
+    $("#pizzaResults").append(total);
     event.preventDefault();
 
 
